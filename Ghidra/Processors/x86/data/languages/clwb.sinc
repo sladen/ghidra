@@ -11,4 +11,8 @@ define pcodeop clflushopt;
 @endif
 
 # Note: PCOMMIT was deprecated prior to it ever being implemented in production processors.
-# I never found the encoding for it.  Therefore, no constructor.
+# Encoding would have been "66 0f ae f8"
+# :PCOMMIT m8	is vexMode=0 & $(PRE_66) & byte=0x0F; byte=0xAE; m8 & reg_opcode=8
+#
+# https://lists.freedesktop.org/archives/dri-devel/2014-November/072089.html
+# https://patchwork.kernel.org/project/linux-nvdimm/patch/146812115425.32932.3314855641604340233.stgit@dwillia2-desk3.amr.corp.intel.com/
